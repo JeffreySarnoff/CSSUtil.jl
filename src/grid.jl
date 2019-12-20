@@ -4,7 +4,7 @@
 """
 function rgrid(elems::AbstractVector)
     nelems = length(elems)
-    container(elems)(style("display" => "grid", "grid-template-row"=>"repeat(1fr, $(nelems))"))
+    container(elems)(style("display" => "grid", "grid-template-rows"=>"repeat(1fr, $(nelems))"))
 end
 rgrid(xs...) = rgrid([xs...])
 
@@ -25,6 +25,6 @@ cgrid(xs...) = cgrid([xs...])
 function grid(elems::AbstractMatrix)
     nelems = length(elems)
     nrows, ncols = size(elems)
-    container(elems)(style("display" => "grid", "grid-template-row"=>"repeat(1fr, $(nrows))",  "grid-template-column"=>"repeat(1fr, $(ncols))"))
+    container(elems)(style("display" => "grid", "grid-template-rows"=>"repeat(1fr, $(nrows))",  "grid-template-columns"=>"repeat(1fr, $(ncols))"))
 end
 # grid(xs...) = grid([xs...])
